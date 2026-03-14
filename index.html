@@ -108,15 +108,17 @@
 
     /* Smooth fade-in animation for elements */
     .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .fade-in.delay-1 { animation-delay: 0.1s; }
-    .fade-in.delay-2 { animation-delay: 0.2s; }
-    .fade-in.delay-3 { animation-delay: 0.3s; }
-    .fade-in.delay-4 { animation-delay: 0.4s; }
+    .fade-in.delay-1,
+    .fade-in.delay-2, 
+    .fade-in.delay-3, 
+    .fade-in.delay-4 {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     @keyframes fadeInUp {
       to {
@@ -290,19 +292,7 @@
       color: var(--text-light);
       font-weight: 400;
       margin: 0 auto 2rem;
-      opacity: 0;
-      animation: typewriter 2s steps(40) 1s forwards;
-      border-right: 2px solid var(--accent);
-      white-space: nowrap;
-      overflow: hidden;
-      width: fit-content;
-    }
-
-    @keyframes typewriter {
-      to {
-        opacity: 1;
-        width: 100%;
-      }
+      opacity: 1;
     }
 
     .hero .subtitle {
@@ -310,8 +300,7 @@
       color: var(--text-muted);
       margin-bottom: 3rem;
       font-weight: 300;
-      animation: fadeInUp 1s ease-out 2.5s forwards;
-      opacity: 0;
+      opacity: 1;
     }
 
     .hero .social-links {
@@ -319,8 +308,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      animation: fadeInUp 1s ease-out 3s forwards;
-      opacity: 0;
+      opacity: 1;
     }
 
     .hero .social-links a {
@@ -367,8 +355,7 @@
       gap: 1.5rem;
       justify-content: center;
       flex-wrap: wrap;
-      animation: fadeInUp 1s ease-out 3.5s forwards;
-      opacity: 0;
+      opacity: 1;
     }
 
     .hero .cta-btn {
@@ -985,7 +972,7 @@
 
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#" class="logo">VW</a>
+      <a href="#" class="logo">Portfolio</a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -997,7 +984,7 @@
   </nav>
 
   <header class="hero">
-    <div class="hero-content fade-in">
+    <div class="hero-content">
       <h1>Viraj Wickramasinghe</h1>
       <p class="tagline">Senior Software Engineer</p>
       <p class="subtitle">Crafting scalable solutions with Java, Spring Boot & AWS — Ottawa, ON, Canada</p>
@@ -1059,14 +1046,14 @@
         <div class="panel skill-panel">
           <h3>Cloud & Infrastructure</h3>
           <ul>
-            <li>AWS (EC2, S3, Lambda, API Gateway, CloudFront, CloudWatch)</li>
-            <li>GCP (Compute Engine, Cloud SQL)</li>
+            <li>AWS EC2</li><li>AWS S3</li><li>AWS Lambda</li><li>AWS API Gateway</li><li>AWS CloudFront</li><li>AWS CloudWatch</li>
+            <li>GCP Compute Engine</li><li>GCP Cloud SQL</li>
           </ul>
         </div>
         <div class="panel skill-panel">
           <h3>DevOps, CI/CD & Tools</h3>
           <ul>
-            <li>Jenkins</li><li>Docker</li><li>Kubernetes</li><li>Git, Bitbucket, GitLab, Jira</li>
+            <li>Jenkins</li><li>Docker</li><li>Kubernetes</li><li>Git</li><li>Bitbucket</li><li>GitLab</li><li>Jira</li>
           </ul>
         </div>
       </div>
@@ -1329,29 +1316,6 @@
         });
       });
 
-      // Typing animation for tagline
-      const tagline = document.querySelector('.hero .tagline');
-      if (tagline) {
-        const text = tagline.textContent;
-        tagline.textContent = '';
-        tagline.style.borderRight = '2px solid var(--accent)';
-        
-        let i = 0;
-        const typeWriter = () => {
-          if (i < text.length) {
-            tagline.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-          } else {
-            // Remove cursor after typing is complete
-            setTimeout(() => {
-              tagline.style.borderRight = 'none';
-            }, 1000);
-          }
-        };
-        
-        setTimeout(typeWriter, 1000);
-      }
     });
 
     // Scroll event listeners
