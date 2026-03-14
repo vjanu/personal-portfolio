@@ -14,13 +14,13 @@
       theme: {
         extend: {
           colors: {
-            'bg-dark': '#0f172a',
             'bg-darker': '#020617',
+            'bg-dark':   '#0f172a',
             'text-light': '#e2e8f0',
             'text-muted': '#94a3b8',
-            'accent': '#0ea5e9',
-            'accent-dark': '#0284c7',
-            'border-subtle': '#334155',
+            'accent':    '#0ea5e9',
+            'accent-dark':'#0284c7',
+            'border':    '#334155',
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -31,86 +31,89 @@
     }
   </script>
 </head>
-<body class="bg-bg-darker text-text-light antialiased selection:bg-accent/30">
+<body class="bg-bg-darker text-text-light min-h-screen antialiased selection:bg-accent/20">
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-bg-dark/80 backdrop-blur-lg border-b border-border-subtle">
+  <nav class="fixed top-0 inset-x-0 z-50 bg-bg-dark/85 backdrop-blur-lg border-b border-border">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#hero" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center border border-accent/30">
+        <div class="w-10 h-10 rounded-md bg-accent/10 border border-accent/30 flex items-center justify-center">
           <span class="text-accent font-bold text-xl font-mono">VW</span>
         </div>
         <div>
-          <div class="font-semibold text-lg">Viraj W.</div>
-          <div class="text-xs text-text-muted font-mono tracking-wide uppercase">Senior Software Engineer</div>
+          <div class="font-semibold tracking-tight">Viraj Wickramasinghe</div>
+          <div class="text-xs text-text-muted font-mono uppercase tracking-wider">Senior Software Engineer</div>
         </div>
       </a>
-      <ul class="hidden md:flex items-center gap-8 text-sm font-medium font-mono tracking-wide uppercase">
-        <li><a href="#about" class="text-text-muted hover:text-accent transition-colors">About</a></li>
-        <li><a href="#skills" class="text-text-muted hover:text-accent transition-colors">Skills</a></li>
-        <li><a href="#experience" class="text-text-muted hover:text-accent transition-colors">Experience</a></li>
-        <li><a href="#projects" class="text-text-muted hover:text-accent transition-colors">Projects</a></li>
-        <li><a href="#contact" class="text-text-muted hover:text-accent transition-colors">Contact</a></li>
+      <ul class="hidden md:flex gap-8 text-sm font-mono tracking-wide uppercase">
+        <li><a href="#about"     class="hover:text-accent transition">About</a></li>
+        <li><a href="#skills"    class="hover:text-accent transition">Skills</a></li>
+        <li><a href="#experience"class="hover:text-accent transition">Experience</a></li>
+        <li><a href="#freelance" class="hover:text-accent transition">Freelance</a></li>
+        <li><a href="#projects"  class="hover:text-accent transition">Projects</a></li>
+        <li><a href="#education" class="hover:text-accent transition">Education</a></li>
+        <li><a href="#contact"   class="hover:text-accent transition">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="hero" class="min-h-screen flex items-center pt-24 pb-16 px-6">
+  <section id="hero" class="min-h-screen flex items-center pt-32 pb-20 px-6">
     <div class="max-w-6xl mx-auto w-full">
-      <p class="text-accent font-mono text-sm tracking-widest mb-6">Senior Software Engineer • Ottawa, ON</p>
-      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">
-        Viraj<br class="md:hidden" /> Wickramasinghe
+      <p class="text-accent font-mono text-sm tracking-widest mb-6">SENIOR SOFTWARE ENGINEER • OTTAWA, ON</p>
+      <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none mb-10">
+        Viraj<br>Wickrama-<span class="text-text-muted/70 font-light">singhe</span>
       </h1>
-      <p class="text-xl md:text-2xl text-text-muted max-w-3xl mb-12">
-        5+ years building enterprise cloud-native systems. 
-        Specializing in <span class="text-accent">Java</span>, <span class="text-accent">Spring Boot</span>, <span class="text-accent">AWS</span>, microservices, and developer tooling that scales.
+      <p class="text-xl md:text-2xl text-text-muted max-w-3xl mb-12 leading-relaxed">
+        5+ years engineering enterprise-scale cloud-native systems.<br>
+        <span class="text-text-light">Java · Spring Boot · AWS · Microservices · Developer Tooling</span>
       </p>
 
       <div class="flex flex-wrap gap-5 mb-16">
-        <a href="#experience" class="px-8 py-4 bg-accent text-bg-darker font-medium rounded-lg hover:bg-accent-dark transition">View Experience</a>
-        <a href="#contact" class="px-8 py-4 border border-text-muted/40 rounded-lg hover:border-accent hover:text-accent transition">Get in Touch</a>
+        <a href="#experience" class="px-8 py-4 bg-accent text-bg-darker font-semibold rounded-lg hover:bg-accent-dark transition">View Experience</a>
+        <a href="#contact"    class="px-8 py-4 border border-text-muted/40 rounded-lg hover:border-accent hover:text-accent transition">Get in Touch</a>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-xl">
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-10 max-w-xl">
         <div>
-          <div class="text-4xl font-bold text-accent">5+</div>
-          <div class="text-sm text-text-muted font-mono uppercase tracking-wider mt-1">Years Experience</div>
+          <div class="text-5xl font-bold text-accent">5+</div>
+          <div class="text-sm text-text-muted font-mono uppercase tracking-wider mt-2">Years Experience</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-accent">99.9%</div>
-          <div class="text-sm text-text-muted font-mono uppercase tracking-wider mt-1">Uptime Delivered</div>
+          <div class="text-5xl font-bold text-accent">99.9%</div>
+          <div class="text-sm text-text-muted font-mono uppercase tracking-wider mt-2">Uptime Delivered</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-accent">20+</div>
-          <div class="text-sm text-text-muted font-mono uppercase tracking-wider mt-1">Engineers Mentored</div>
+          <div class="text-5xl font-bold text-accent">20+</div>
+          <div class="text-sm text-text-muted font-mono uppercase tracking-wider mt-2">Engineers Mentored</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="py-24 px-6 bg-bg-dark border-t border-border-subtle">
+  <section id="about" class="py-24 px-6 bg-bg-dark border-t border-border">
     <div class="max-w-6xl mx-auto">
-      <p class="text-accent font-mono text-sm tracking-widest mb-3 uppercase">01 — About</p>
-      <h2 class="text-4xl md:text-5xl font-bold mb-12">Engineer. Architect.<br>Problem Solver.</h2>
+      <p class="text-accent font-mono text-sm tracking-widest mb-4 uppercase">01 — About</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-12">The Engineer<br><span class="text-accent">Behind the Code</span></h2>
 
       <div class="grid md:grid-cols-2 gap-16">
         <div class="space-y-8 text-lg leading-relaxed text-text-muted">
-          <p>I'm a <strong class="text-text-light">Senior Software Engineer</strong> at <strong class="text-text-light">Synopsys</strong>, where I lead large-scale data platform migrations, design reliable backend systems, and create developer tooling used daily by engineering teams.</p>
-          <p>Over 5+ years I've worked across microservices, ERP systems, cloud pipelines, CI/CD, and more — always focused on clean architecture and systems that stay stable at 3 a.m.</p>
-          <blockquote class="border-l-4 border-accent pl-6 italic text-text-light text-xl py-2">"Clean systems, clear architecture, and code that doesn't wake you up at 3am."</blockquote>
-          <p>Mentoring engineers, contributing to the Ottawa tech community, and pursuing AWS certifications. M.App.Comp (88/100) from University of Windsor.</p>
+          <p>I'm a <strong class="text-text-light">Senior Software Engineer</strong> at <strong class="text-text-light">Synopsys, Ottawa</strong> — where I lead data platform migrations, architect backend systems, and build internal developer tooling that engineers use every day.</p>
+          <p>My background spans the full product lifecycle: distributed microservices, performance-critical ERP systems, cloud data pipelines, CI/CD automation, and freelance client projects. I've spent 5+ years turning complex problems into clean, maintainable systems.</p>
+          <blockquote class="border-l-4 border-accent pl-6 italic text-xl py-2 text-text-light">"Clean systems, clear architecture, and code that doesn't wake you up at 3am."</blockquote>
+          <p>I mentor engineers, volunteer in Ottawa, and am actively pursuing AWS certifications. I hold a <strong class="text-text-light">Master of Applied Computing</strong> from the University of Windsor with an 88/100 average.</p>
         </div>
 
-        <div class="bg-bg-darker border border-border-subtle rounded-xl overflow-hidden">
-          <div class="bg-slate-800/50 px-6 py-4 font-mono text-sm tracking-wide text-accent uppercase border-b border-border-subtle">// Quick Info</div>
-          <dl class="divide-y divide-border-subtle text-sm">
-            <div class="px-6 py-4 flex"><dt class="w-28 text-text-muted font-mono">Location</dt><dd>Ottawa, ON, Canada</dd></div>
-            <div class="px-6 py-4 flex"><dt class="w-28 text-text-muted font-mono">Role</dt><dd>Sr. SWE @ Synopsys</dd></div>
-            <div class="px-6 py-4 flex"><dt class="w-28 text-text-muted font-mono">Status</dt><dd>Open to opportunities</dd></div>
-            <div class="px-6 py-4 flex"><dt class="w-28 text-text-muted font-mono">Focus</dt><dd>Java · AWS · Microservices</dd></div>
-            <div class="px-6 py-4 flex"><dt class="w-28 text-text-muted font-mono">Degree</dt><dd>M.App.Comp — UWindsor</dd></div>
+        <div class="bg-bg-darker border border-border rounded-xl overflow-hidden self-start">
+          <div class="bg-slate-800/60 px-6 py-4 font-mono text-sm tracking-wide text-accent uppercase border-b border-border">// Quick Info</div>
+          <dl class="divide-y divide-border text-sm">
+            <div class="px-6 py-4 flex gap-4"><dt class="w-28 text-text-muted font-mono">Location</dt><dd>Ottawa, ON, Canada</dd></div>
+            <div class="px-6 py-4 flex gap-4"><dt class="w-28 text-text-muted font-mono">Role</dt><dd>Sr. SWE @ Synopsys</dd></div>
+            <div class="px-6 py-4 flex gap-4"><dt class="w-28 text-text-muted font-mono">Status</dt><dd>Open to opportunities</dd></div>
+            <div class="px-6 py-4 flex gap-4"><dt class="w-28 text-text-muted font-mono">Focus</dt><dd>Java · AWS · Microservices</dd></div>
+            <div class="px-6 py-4 flex gap-4"><dt class="w-28 text-text-muted font-mono">Degree</dt><dd>M.App.Comp — UWindsor</dd></div>
+            <div class="px-6 py-4 flex gap-4"><dt class="w-28 text-text-muted font-mono">Languages</dt><dd>English · Sinhala</dd></div>
           </dl>
         </div>
       </div>
@@ -120,42 +123,250 @@
   <!-- SKILLS -->
   <section id="skills" class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
-      <p class="text-accent font-mono text-sm tracking-widest mb-3 uppercase">02 — Skills</p>
-      <h2 class="text-4xl md:text-5xl font-bold mb-12">Core Toolkit</h2>
+      <p class="text-accent font-mono text-sm tracking-widest mb-4 uppercase">02 — Skills</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-12">What I <span class="text-accent">Build With</span></h2>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Repeat for each skill category – using same card style -->
-        <div class="bg-bg-dark border border-border-subtle rounded-xl p-8 hover:border-accent/50 transition">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-bg-dark border border-border rounded-xl p-8 hover:border-accent/60 transition">
           <h3 class="text-accent font-mono uppercase tracking-wider text-sm mb-6">Languages</h3>
           <div class="flex flex-wrap gap-3">
             <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Java</span>
             <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Python</span>
-            <!-- ... add rest -->
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">C# .NET</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">JavaScript</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Bash</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Groovy</span>
           </div>
         </div>
-        <!-- Add the other 5 categories similarly -->
+
+        <div class="bg-bg-dark border border-border rounded-xl p-8 hover:border-accent/60 transition">
+          <h3 class="text-accent font-mono uppercase tracking-wider text-sm mb-6">Frameworks</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Spring Boot</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Spring MVC</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">React.js</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Node.js</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">JUnit</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Mockito</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Vite</span>
+          </div>
+        </div>
+
+        <div class="bg-bg-dark border border-border rounded-xl p-8 hover:border-accent/60 transition">
+          <h3 class="text-accent font-mono uppercase tracking-wider text-sm mb-6">Cloud & Infrastructure</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">AWS EC2</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">S3</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Lambda</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">API Gateway</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">CloudFront</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">CloudWatch</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">ElastiCache</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">GCP</span>
+          </div>
+        </div>
+
+        <div class="bg-bg-dark border border-border rounded-xl p-8 hover:border-accent/60 transition">
+          <h3 class="text-accent font-mono uppercase tracking-wider text-sm mb-6">Databases</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Oracle</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">MySQL</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">PostgreSQL</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">MongoDB</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">NoSQL</span>
+          </div>
+        </div>
+
+        <div class="bg-bg-dark border border-border rounded-xl p-8 hover:border-accent/60 transition">
+          <h3 class="text-accent font-mono uppercase tracking-wider text-sm mb-6">DevOps & CI/CD</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Jenkins</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Docker</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Kubernetes</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Git</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">GitLab</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Bitbucket</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Gradle</span>
+          </div>
+        </div>
+
+        <div class="bg-bg-dark border border-border rounded-xl p-8 hover:border-accent/60 transition">
+          <h3 class="text-accent font-mono uppercase tracking-wider text-sm mb-6">Practices & Tools</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Agile/Scrum</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">TDD</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Microservices</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">REST APIs</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">GraphQL</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Postman</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">JMeter</span>
+            <span class="px-4 py-2 bg-slate-800/50 rounded-full text-sm border border-slate-700">Selenium</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE, PROJECTS, FREELANCE, EDUCATION, CONTACT → follow similar clean card-based pattern -->
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-24 px-6 bg-bg-dark border-t border-border">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-accent font-mono text-sm tracking-widest mb-4 uppercase">03 — Experience</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-12">Where I've <span class="text-accent">Made Impact</span></h2>
+
+      <div class="space-y-16">
+        <!-- Synopsys Senior -->
+        <div class="grid md:grid-cols-[180px,1fr] gap-8 md:gap-12">
+          <div class="text-right md:text-left">
+            <div class="text-text-muted font-mono text-sm">Jan 2024 — Present</div>
+            <div class="mt-2 inline-block px-3 py-1 bg-slate-800/50 border border-slate-700 rounded-full text-xs font-mono">Full-time</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">Senior Software Engineer</h3>
+            <div class="text-accent font-mono mb-4">Synopsys · Ottawa, ON</div>
+            <ul class="space-y-3 text-text-muted">
+              <li>Led MDRF data platform migration to SQL on AWS — improved data consistency 15%, cut maintenance costs 10%.</li>
+              <li>Designed the Tiler platform (Java, Python, Spring Boot, Gradle), accelerating delivery timelines by 25%.</li>
+              <li>Built and maintained CI/CD pipelines with Jenkins & AWS, improving build reliability and deploy efficiency by 15%.</li>
+              <li>Developed nvm-jira — template-based Jira automation via React.js + CloudFront + ElastiCache, cutting story creation time 30%.</li>
+              <li>Reduced issue resolution time by 20% through proactive monitoring and root cause analysis.</li>
+              <li>Mentored junior engineers through structured code reviews and architecture discussions.</li>
+            </ul>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Java</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Python</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Spring Boot</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">AWS</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">React.js</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Jenkins</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">ElastiCache</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add the other experience entries in the same format -->
+
+        <div class="grid md:grid-cols-[180px,1fr] gap-8 md:gap-12">
+          <div class="text-right md:text-left">
+            <div class="text-text-muted font-mono text-sm">May 2023 — Dec 2023</div>
+            <div class="mt-2 inline-block px-3 py-1 bg-slate-800/50 border border-slate-700 rounded-full text-xs font-mono">Internship</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">Software Automation Intern</h3>
+            <div class="text-accent font-mono mb-4">Synopsys · Ottawa, ON</div>
+            <ul class="space-y-3 text-text-muted">
+              <li>Built and maintained 6+ internal automation tools in Java, Groovy, and Bash, streamlining IP design workflows.</li>
+              <li>Implemented 100+ automated test cases, reducing manual testing effort by 30%.</li>
+              <li>Collaborated with QA and Layout teams to deliver data-driven design accuracy reports.</li>
+            </ul>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Java</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Groovy</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Bash</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Jenkins</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hoist Global Services -->
+        <div class="grid md:grid-cols-[180px,1fr] gap-8 md:gap-12">
+          <div class="text-right md:text-left">
+            <div class="text-text-muted font-mono text-sm">Jun 2022 — Apr 2023</div>
+            <div class="mt-2 inline-block px-3 py-1 bg-slate-800/50 border border-slate-700 rounded-full text-xs font-mono">Remote</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">Technical Analyst</h3>
+            <div class="text-accent font-mono mb-4">Hoist Global Services · Canada</div>
+            <ul class="space-y-3 text-text-muted">
+              <li>Production-level support and enhancements for 7+ enterprise customers, improving system performance 5%.</li>
+              <li>Developed Java and C#.Net components in the IFS ERP platform, reducing manual effort by 20%.</li>
+              <li>Resolved 20+ high-priority escalations with North American AWS engineering teams.</li>
+              <li>SQL optimisation, data migrations, and production performance tuning.</li>
+            </ul>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Java</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">C# .NET</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">SQL</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">AWS</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">IFS ERP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- IFS Sri Lanka -->
+        <div class="grid md:grid-cols-[180px,1fr] gap-8 md:gap-12">
+          <div class="text-right md:text-left">
+            <div class="text-text-muted font-mono text-sm">Nov 2019 — Apr 2022</div>
+            <div class="mt-2 inline-block px-3 py-1 bg-slate-800/50 border border-slate-700 rounded-full text-xs font-mono">→ Promoted</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">Software Engineer → Senior</h3>
+            <div class="text-accent font-mono mb-4">IFS · Sri Lanka</div>
+            <ul class="space-y-3 text-text-muted">
+              <li>Built critical HCM & Payroll components (Java, C#.Net, IFS Aurena/IEE) maintaining 99.9% system uptime.</li>
+              <li>Engineered 3+ core system components improving platform functionality and UX.</li>
+              <li>Served as Scrum Master — achieved 50% backlog reduction across HCM & Payroll teams.</li>
+              <li>Led and mentored 20+ R&D engineers; delivered training for 10+ team members.</li>
+              <li>Conducted 30+ customer consultations resolving complex technical issues.</li>
+            </ul>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Java</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">C# .NET</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Oracle</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">IFS Aurena</span>
+              <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Scrum Master</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREELANCE -->
+  <section id="freelance" class="py-24 px-6 bg-bg-dark border-t border-border">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-accent font-mono text-sm tracking-widest mb-4 uppercase">04 — Freelance</p>
+      <h2 class="text-4xl md:text-5xl font-bold mb-8">Independent <span class="text-accent">Work</span></h2>
+      <p class="text-lg text-text-muted max-w-3xl mb-12">Alongside my full-time career I take on freelance and side projects — web apps for small businesses, data pipeline automation, and architecture consultancy.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-bg-dark border border-border rounded-xl p-8 hover:border-accent/60 transition group">
+          <div class="text-text-muted font-mono text-xs mb-3">// FL-001</div>
+          <h3 class="text-xl font-semibold mb-4 group-hover:text-accent transition">Business Client Portal</h3>
+          <p class="text-text-muted mb-6">Designed and built a custom client portal for a local SME — role-based authentication, invoice management, REST API backend — delivered end-to-end and deployed on AWS.</p>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">Spring Boot</span>
+            <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">React.js</span>
+            <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">PostgreSQL</span>
+            <span class="px-3 py-1 bg-slate-800/50 rounded-full text-xs border border-slate-700">AWS EC2</span>
+          </div>
+        </div>
+
+        <!-- Repeat for FL-002, FL-003, FL-004 with same structure -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS, EDUCATION, CONTACT sections follow similar clean card + typography pattern -->
 
   <!-- FOOTER -->
-  <footer class="py-12 px-6 bg-bg-dark border-t border-border-subtle text-center text-sm text-text-muted">
+  <footer class="py-12 px-6 bg-bg-dark border-t border-border text-center text-sm text-text-muted">
     <p>© 2025 Viraj Wickramasinghe · Ottawa, Canada</p>
     <p class="mt-2">Senior Software Engineer · Java · AWS · Microservices</p>
   </footer>
 
   <script>
-    // Simple scroll reveal (optional – can use IntersectionObserver for production)
-    document.querySelectorAll('section').forEach(sec => {
-      sec.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
-      const observer = new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) {
-          sec.classList.remove('opacity-0', 'translate-y-8');
-          observer.unobserve(sec);
+    // Basic scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-12');
         }
-      }, { threshold: 0.1 });
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(sec => {
+      sec.classList.add('opacity-0', 'translate-y-12', 'transition-all', 'duration-700');
       observer.observe(sec);
     });
   </script>
