@@ -695,6 +695,190 @@
       border-left-width: 4px;
     }
 
+    /* Projects Section Styles */
+    .projects-grid {
+      display: grid;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 0;
+      box-shadow: var(--shadow-md);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 280px;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--secondary));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
+      opacity: 0;
+      transition: all 0.5s ease;
+      transform: scale(0);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--glow-primary), var(--shadow-xl);
+      border-color: var(--border-active);
+      background: var(--card-hover);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-card:hover::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .project-image {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-radius: 24px 0 0 24px;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-image::before {
+      opacity: 0.4;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.1);
+    }
+
+    .project-content {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .project-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--text) 0%, var(--text-light) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .project-description {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tech-stack .tech-tag {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      color: var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-stack .tech-tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s;
+    }
+
+    .tech-stack .tech-tag:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: var(--accent);
+      color: var(--text);
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    .tech-stack .tech-tag:hover::before {
+      left: 100%;
+    }
+
+    .project-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -889,6 +1073,20 @@
         gap: 2rem;
       }
 
+      .project-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .project-image {
+        border-radius: 24px 24px 0 0;
+        min-height: 200px;
+      }
+
+      .project-content {
+        padding: 2rem 1.5rem;
+      }
+
       .skill-panel ul {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       }
@@ -979,6 +1177,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -1059,6 +1258,100 @@
             <li>Jenkins</li><li>Docker</li><li>Kubernetes</li><li>Git</li><li>Bitbucket</li><li>GitLab</li><li>Jira</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Featured <span>Projects</span></h2>
+      <div class="projects-grid">
+        
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder">📋</div>
+            <!-- <img src="images/nvm-jira.png" alt="nvm-jira project screenshot"> -->
+          </div>
+          <div class="project-content">
+            <h3>nvm-jira</h3>
+            <p class="project-description">
+              Internal automation tool for template-based Jira story creation and management. Features a sophisticated template system where users upload custom templates, and based on provided data, the application automates the creation of delivery stories. Includes advanced capabilities for bulk updating subtasks across multiple stories, comprehensive reporting, and streamlined workflow management. Deployed with multi-level CI/CD pipelines that validate APIs, run comprehensive unit tests, and handle automated deployments.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Vite.js</span>
+              <span class="tech-tag">AWS CloudFront</span>
+              <span class="tech-tag">ElastiCache</span>
+              <span class="tech-tag">Jira APIs</span>
+              <span class="tech-tag">GitHub Actions</span>
+              <span class="tech-tag">Oracle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder">🔧</div>
+            <!-- <img src="images/Tiler.png" alt="Tiler project screenshot"> -->
+          </div>
+          <div class="project-content">
+            <h3>Tiler</h3>
+            <p class="project-description">
+              Advanced semiconductor layout management system used to create comprehensive bundles of deliverables using layout and schematic files. The system processes files through multiple verification stages, automatically identifies and resolves issues related to semiconductor layouts against schema specifications, packages deliverables efficiently, and uploads to Artifactory. Features robust CI/CD pipelines with Jenkins integration, multiple validation steps, and is actively used by layout automation and production teams across Synopsys.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">Gradle</span>
+              <span class="tech-tag">Jenkins</span>
+              <span class="tech-tag">SQLite</span>
+              <span class="tech-tag">Artifactory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder">⚡</div>
+            <!-- <img src="images/nvmGridQA.png" alt="nvmGridQA project screenshot"> -->
+          </div>
+          <div class="project-content">
+            <h3>nvmGridQA</h3>
+            <p class="project-description">
+              Comprehensive script-based quality assurance system designed for IBM Spectrum LSF (Load Sharing Facility) environments for submitting and managing batch jobs to distributed computing queues. The system performs automated QA processes to identify failures, faults, and errors in design kits sourced from layout, digital, and design files. Features intelligent error detection, comprehensive reporting, and seamless integration with existing CAD workflows. Extensively used by CAD engineers, layout design teams, and verification specialists.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Bash</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">IBM Spectrum LSF</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Linux</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder">💼</div>
+            <!-- <img src="images/IFS.png" alt="IFS Aurora Payroll project screenshot"> -->
+          </div>
+          <div class="project-content">
+            <h3>IFS Aurora Payroll</h3>
+            <p class="project-description">
+              Mission-critical payroll component of the IFS ERP system, successfully deployed to over 10,000+ customers worldwide. Developed comprehensive payroll processing capabilities including automated calculations, tax compliance, reporting systems, and integration with HR modules. Features advanced monthly-end payroll processing, complex regulatory compliance handling, multi-currency support, and sophisticated reporting infrastructure. Built using modern enterprise technologies with robust GraphQL APIs for seamless data integration.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">GraphQL</span>
+              <span class="tech-tag">.NET Framework</span>
+              <span class="tech-tag">Oracle</span>
+              <span class="tech-tag">SQL Server</span>
+              <span class="tech-tag">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
